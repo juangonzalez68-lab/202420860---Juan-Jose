@@ -1,11 +1,11 @@
-//iostream input output stream
 #include <iostream>
 
 
 using namespace std;
 
 int main () {
-    cout << "Hola Mundo!";
+    cout << "Hola Mundo!"<< endl ;
+    cout << "soy un programa en C++" << endl;
     return 0;
 }
 
