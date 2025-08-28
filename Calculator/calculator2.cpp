@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    double num1, num2, resultado;
+    int num1, num2, resultado;
     char operacion;
 
     cout << "Calculadora basica" << endl;
