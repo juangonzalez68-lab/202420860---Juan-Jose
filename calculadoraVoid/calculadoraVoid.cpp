@@ -22,7 +22,7 @@ void multTwoValues(int valueOne, int valueTwo){
 void divideNumbers(int valueOne, int valueTwo){
     if (valueTwo==0){
         cout << "La division es erronea " << endl;  
-        return  ;
+        return ;
     
     }
     else {
