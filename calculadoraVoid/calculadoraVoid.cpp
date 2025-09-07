@@ -31,10 +31,6 @@ void divideNumbers(int valueOne, int valueTwo){
     }
 }   
 
-
-
-
-
 int main(){
     int valueOne, vTwo;
     cout << "Ingrese el primer valor: ";
@@ -46,8 +42,6 @@ int main(){
     subsOfTwoValues(valueOne, vTwo);
     multTwoValues (valueOne, vTwo);
     divideNumbers (valueOne, vTwo);
-
-    
 
     return 0;
 }
