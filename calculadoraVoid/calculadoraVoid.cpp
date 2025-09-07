@@ -18,6 +18,20 @@ void multTwoValues(int valueOne, int valueTwo){
     int multResult = valueOne * valueTwo;
     cout << "La multiplicacion es: " << multResult << endl;  
 }
+// division
+void divideNumbers( valueOne, int valueTwo){
+    
+    if (valueTwo==0){
+        cout << "La division es erronea " << endl;  
+        return  ;
+    
+    }
+    else {
+        double divResult = (double)valueOne / valueTwo;
+            cout << "La division es: " << divResult << endl;  
+    }
+}   
+
 
 
 
@@ -32,6 +46,8 @@ int main(){
     sumOfTwoValues(valueOne, vTwo);
     subsOfTwoValues(valueOne, vTwo);
     multTwoValues (valueOne, vTwo);
+    divideNumbers (valueOne, vTwo);
+
     
 
     return 0;
