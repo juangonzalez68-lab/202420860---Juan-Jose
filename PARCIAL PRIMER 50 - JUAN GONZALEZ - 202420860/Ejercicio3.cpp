@@ -14,15 +14,15 @@ bool requiresMaintenance(int leaves, int interval) {
 
 int main() {
     
-    int leaves, intervalo;
+    int leaves, interval;
 
     cout << "Ingrese la cantidad de hojas producidas: ";
     cin >> leaves;
 
     cout << "Ingrese el intervalo de mantenimiento: ";
-    cin >> intervalo;
+    cin >> interval;
 
-    if (requiresMaintenance(leaves, intervalo))
+    if (requiresMaintenance(leaves, interval))
     {
         cout << "La máquina requiere mantenimiento.\n";
     } 
