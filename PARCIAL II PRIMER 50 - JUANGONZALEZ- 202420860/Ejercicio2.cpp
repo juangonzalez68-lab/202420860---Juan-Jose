@@ -10,7 +10,6 @@ int questionScore(bool correct) {
     return correct ? 10 : 0;
 }
 
-
 void playQuiz() {
     char userAnswer;
     int totalScore = 0;
