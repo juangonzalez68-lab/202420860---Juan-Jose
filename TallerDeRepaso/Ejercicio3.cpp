@@ -2,9 +2,11 @@
 using namespace std;
 
 void showTable(int inputNumber) {
-    for (int counter = 1; counter <= 10; ++counter) 
+    int counter;
+    while(counter<=10)
     {
-        cout << inputNumber << " x " << counter << " = " << inputNumber * counter << endl;
+        cout << inputNumber << "*" << counter << "=" << inputNumber * counter << endl;
+        counter++; 
     }
 }
 

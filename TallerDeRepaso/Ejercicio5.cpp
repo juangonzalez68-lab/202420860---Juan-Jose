@@ -1,14 +1,18 @@
 #include <iostream>
 using namespace std;
 
-int greaterNumber(int firstValue, int secondValue) {
+void greaterNumber(int firstValue, int secondValue) {
     if (firstValue > secondValue) 
     {
-        return firstValue;
+        cout << "El mayor es: " << firstValue << endl;
     } 
-    else
+    else if (secondValue > firstValue) 
     {
-        return secondValue;
+        cout << "El mayor es: " << secondValue << endl;
+    } 
+    else 
+    {
+        cout << "Ambos numeros son iguales: " << firstValue << endl;
     }
 }
 
@@ -21,7 +25,7 @@ int main() {
     cout << "Ingresa el segundo numero: ";
     cin >> userNumber2;
 
-    cout << "El mayor es: " << greaterNumber(userNumber1, userNumber2) << endl;
+    greaterNumber(userNumber1, userNumber2);
 
     return 0;
 }
