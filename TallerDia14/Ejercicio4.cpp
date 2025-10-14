@@ -12,7 +12,8 @@ void contarPalabras() {
 
     cout << "Ingrese las palabras una por una, cuando desee terminar ingrese la palabra: fin" << endl;
     cin >> word;
-    while (word != "fin") {
+    while (word != "fin") 
+    {
         if (word.length() > number) total++;
         cin >> word;
     }
