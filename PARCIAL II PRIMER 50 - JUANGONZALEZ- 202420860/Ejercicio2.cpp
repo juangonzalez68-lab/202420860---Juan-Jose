@@ -1,44 +1,52 @@
 #include <iostream>
 using namespace std;
 
-
-bool isCorrect(char userAnswer, char correctAnswer) {
-    return userAnswer == correctAnswer;
+bool isCorrect(char userAnswer, char correctAnswer) 
+{
+    if (userAnswer == correctAnswer) 
+    {
+        return false;
+    } 
+    else 
+    {
+        return true;
+    }
 }
 
-int questionScore(bool correct) {
-    return correct ? 10 : 0;
+int questionScore(bool isCorrect) 
+{
+    if (isCorrect) 
+    {
+        return 10;
+    } 
+    else 
+    {
+        return 0;
+    }
 }
 
-void playQuiz() {
+void playQuiz() 
+{
+    char correctAnswers[3] = {'b', 'c', 'a'};
     char userAnswer;
     int totalScore = 0;
 
-   
-    cout << "Pregunta 1: " << endl;
-    cout << "a)   b)   c) " << endl;
-    cout << "Tu respuesta: ";
-    cin >> userAnswer;
-    totalScore += questionScore(isCorrect(userAnswer, 'b'));
+    for (int i = 0; i < 3; i++) 
+    {
+        cout << "Pregunta " << i + 1 << " → ";
+        cin >> userAnswer;
 
+        userAnswer = tolower(userAnswer);
 
-    cout << "Pregunta 2: " << endl;
-    cout << "a)   b)   c) " << endl;
-    cout << "Tu respuesta: ";
-    cin >> userAnswer;
-    totalScore += questionScore(isCorrect(userAnswer, 'c'));
+        bool correct = isCorrect(userAnswer, correctAnswers[i]);
+        totalScore += questionScore(correct);
+    }
 
-
-    cout << "Pregunta 3: " << endl;
-    cout << "a)  b)   c) " << endl;
-    cout << "Tu respuesta: ";
-    cin >> userAnswer;
-    totalScore += questionScore(isCorrect(userAnswer, 'a'));
-
-    cout << "Puntaje final: " << totalScore << endl;
+    cout << "Tu puntaje final es: " << totalScore << endl;
 }
 
-int main() {
+int main() 
+{
     playQuiz();
     return 0;
 }

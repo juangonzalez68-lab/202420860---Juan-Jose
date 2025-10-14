@@ -4,7 +4,7 @@ using namespace std;
 bool isValidAmount(int amount) {
    if(amount % 50 == 0)
     { 
-       return true;
+        return true;
     }
     else 
     {
