@@ -13,10 +13,10 @@ void forWithArray()
         cout << "el numero es: " << arrayValue << endl;
 
         if (numbers[i] > maximo)
-        {
+            {
             maximo = numbers[i];
-        }   
-    }
+            }   
+        }
     cout << "el numero mayor es: " << maximo << endl;
 }
 
