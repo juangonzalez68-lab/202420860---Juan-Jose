@@ -1,18 +1,25 @@
 #include <iostream>
 using namespace std;
 
-void countWordsAndLongest(string phrase) {
+void countWordsAndLongest(string phrase)
+{
     int wordCount = 0;
     string longestWord = "";
     string currentWord = "";
     
-    for (int i = 0; i <= phrase.length(); i++) {
-        if (i < phrase.length() && phrase[i] != ' ') {
+    for (int i = 0; i <= phrase.length(); i++)
+    {
+        if (i < phrase.length() && phrase[i] != ' ') 
+        {
             currentWord += phrase[i];
-        } else {
-            if (currentWord != "") {
+        } 
+        else 
+        {
+            if (currentWord != "") 
+            {
                 wordCount++;
-                if (currentWord.length() > longestWord.length()) {
+                if (currentWord.length() > longestWord.length()) 
+                {
                     longestWord = currentWord;
                 }
                 currentWord = "";
