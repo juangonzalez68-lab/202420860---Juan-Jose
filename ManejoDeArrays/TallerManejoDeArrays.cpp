@@ -20,17 +20,15 @@ int getUserAction() {
 }
 
 // 1. Registrar o reiniciar ventas
-void getNewSales(char**& names, int*& values, int& size) {
+void getNewSales(string* names, int* values, int size) {
+
     cout << "Ingrese el numero de ventas a registrar: ";
     cin >> size;
-
- 
-    names = new char*[size];
+    names = new string[size];
     values = new int[size];
-
     for (int i = 0; i < size; i++) 
     {
-        names[i] = new char[30];
+    
         cout << "Ingrese el nombre de la venta #" << i + 1 << ": ";
         cin >> names[i];
         cout << "Ingrese el valor de " << names[i] << ": ";
@@ -39,81 +37,54 @@ void getNewSales(char**& names, int*& values, int& size) {
 }
 //2. mostrar todas las ventas
 
-void printSales(char** names, int* values, int size) {
-    if (size == 0) 
-    {
-        cout << "No hay ventas registradas." << endl;
-        return;
+void printSales(string names[], int values[], int size){
+    cout << "Lista actual de ventas:" << endl;
+    cout << "--------------------" << endl;
+    for (int i = 0; i < size; i++){
+        
+
+        cout << "Venta: " << names[i] << "  Valor: " << values[i] << endl;
     }
-    cout << "Lista actual de ventas" << endl;
-    cout << "-----------------------------" << endl;
-    for (int i = 0; i < size; i++)
-    {
-        cout << "Venta: " << names[i] << ", Valor: " << values[i] << endl;
-    }
-}
-// funcion para cuando son iguales
-bool sonIguales(const char* str1, const char* str2) {
-    while (*str1 && *str2) 
-    {
-        if (*str1 != *str2) 
-        {
-            return false;
-        }
-        str1++;
-        str2++;
-    }
-    return *str1 == *str2;
 }
 // 3. Modificar el valor de una venta específica
-void modifySale(char** names, int* values, int size) {
-    if (size == 0)
-    {
-        cout << "No hay ventas registradas para modificar." << endl;
-        return;
-    }
-    char search[30];
+void modifySale(string names[], int values[], int size){
+    string name;
     cout << "Ingrese el nombre de la venta a modificar: ";
-    cin >> search;
-    int newPositionValue;
-    cout << "Ingrese el nuevo valor: ";
-    cin >> newPositionValue;
-    for (int i = 0; i < size; i++)
-    {
-        if (sonIguales(names[i], search))
-        {
-            cout << "Venta encontrada." << endl;
-            values[i] = newPositionValue;
-            cout << "Valor actualizado exitosamente." << endl;
-            return;
-        
+    cin >> name;
+    int found = 0;
+
+    for (int i = 0; i < size; i++){
+        if (names[i] == name){
+            cout << "Ingrese el nuevo valor para " << name << ": ";
+            cin >> values[i];
+            found = 1;
         }
     }
-    cout << "Venta no encontrada." << endl;
+
+    if (found == 0){
+        cout << "Venta no encontrada." << endl;
+    }
 }
 // 4. Buscar una venta por nombre
-void findSale(char** names, int* values, int size) {
-    if (size == 0)
-    {
-        cout << "No hay ventas registradas." << endl;
-        return;
-    }
-    char search[30];
-    cout << "Ingrese el nombre de la venta a buscar: ";
-    cin >> search;
-    for (int i = 0; i < size; i++) 
-    {
-        if (sonIguales(names[i], search))
-        {
-            cout << "Venta encontrada: " << names[i] << ", Valor: " << values[i] << endl;
-            return;
-        
+void findSale(string names[], int values[], int size){
+    string name;
+    cout << "Ingrese el nombre de la venta que desea buscar: ";
+    cin >> name;
+    int found = 0;
+
+    for (int i = 0; i < size; i++){
+        if (names[i] == name){
+            cout << "Venta encontrada en la posición " << i + 1 << "  Valor: " << values[i] << endl;
+            found = 1;
         }
     }
-    cout << "Venta no encontrada." << endl;
+
+    if (found == 0){
+        cout << "Venta no encontrada." << endl;
+    }
 }
 //5. Mostrar las ventas dentro de un rango de precios
-void salesInRange(char** names, int* values, int size) {
+void salesInRange(string* names, int* values, int size) {
     if (size == 0)
     {
         cout << "No hay ventas registradas." << endl;
@@ -150,7 +121,7 @@ void totalSales(int* values, int size) {
 void run() {
     bool continueRuning = true;
     int arraySize = 0;
-    char** names;
+    string* names;
     int* values;
 
     while (continueRuning)
@@ -188,19 +159,11 @@ void run() {
         } 
         else if (userAction == 7) 
         {
+            delete[] names;
+            delete [] values;
             continueRuning = false;
-        } 
-        else 
-        {
-            cout << "Accion no valida. Por favor intente de nuevo." << endl;
         }
     }
-    for (int i = 0; i < arraySize; i++) 
-    {
-        delete[] names[i];
-    }
-    delete[] names;
-    delete[] values;
     
 }
 
